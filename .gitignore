@@ -1,0 +1,13 @@
+# Java — arquivos compilados
+server/*.class
+
+# Node.js
+client/node_modules/
+
+# Vite build
+client/dist/
+
+# Logs e temporários
+*.log
+.DS_Store
+Thumbs.db
