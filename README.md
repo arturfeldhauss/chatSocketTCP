@@ -13,7 +13,8 @@
 
 ---
 
-## Como Executar
+## Como Executar 
+## IMPORTANTE: Rode primeiro o servidor e depois o client
 
 ### 1. Servidor Java
 
