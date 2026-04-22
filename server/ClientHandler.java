@@ -118,7 +118,6 @@ public class ClientHandler implements Runnable {
         return String.join("-", ips);
     }
 
-    // Extrai valor de campo string de um JSON simples
     public static String extrairString(String json, String chave) {
         String padrao = "\"" + chave + "\"";
         int idx = json.indexOf(padrao);
@@ -136,12 +135,13 @@ public class ClientHandler implements Runnable {
                 if (c == '\\' && pos + 1 < json.length()) {
                     char next = json.charAt(pos + 1);
                     switch (next) {
-                        case '"': sb.append('"'); break;
+                        case '"':  sb.append('"');  break;
                         case '\\': sb.append('\\'); break;
-                        case 'n': sb.append('\n'); break;
-                        default: sb.append(next); break;
+                        case 'n':  sb.append('\n'); break;
+                        default:   sb.append(next); break;
                     }
-                    pos += 2; continue;
+                    pos += 2;
+                    continue;
                 }
                 if (c == '"') break;
                 sb.append(c); pos++;
@@ -153,7 +153,6 @@ public class ClientHandler implements Runnable {
         return json.substring(start, end).trim();
     }
 
-    // Extrai array de strings de um campo JSON: "chave":["val1","val2"]
     public static List<String> extrairArray(String json, String chave) {
         String padrao = "\"" + chave + "\"";
         int idx = json.indexOf(padrao);
@@ -172,7 +171,10 @@ public class ClientHandler implements Runnable {
                 pos++;
                 while (pos < conteudo.length()) {
                     char ch = conteudo.charAt(pos);
-                    if (ch == '\\' && pos + 1 < conteudo.length()) { pos += 2; continue; }
+                    if (ch == '\\' && pos + 1 < conteudo.length()) {
+                        pos += 2;
+                        continue;
+                    }
                     if (ch == '"') break;
                     sb.append(ch); pos++;
                 }

@@ -1,9 +1,9 @@
 @echo off
-echo Compilando servidor Java...
+echo Compilando...
 javac ChatServer.java ClientHandler.java
 if %ERRORLEVEL% EQU 0 (
-    echo Compilacao concluida com sucesso!
+    echo OK
 ) else (
-    echo ERRO na compilacao. Verifique se o Java JDK esta instalado e no PATH.
+    echo Erro de compilacao.
 )
 pause

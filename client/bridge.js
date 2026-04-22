@@ -1,4 +1,4 @@
-// Bridge WebSocket <-> TCP
+// Bridge WebSocket  TCP
 // Cada conexão WebSocket do browser gera uma conexão TCP separada ao servidor Java.
 const WebSocket = require('ws');
 const net       = require('net');

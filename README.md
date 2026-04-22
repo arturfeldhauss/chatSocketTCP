@@ -1,13 +1,10 @@
 # Chat com Sockets TCP
 
 ## Tecnologias Utilizadas
-
-| Componente | Tecnologia |
-|------------|-----------|
-| Servidor | Java 11+ (Sockets TCP, Threads) |
-| Bridge | Node.js 18+ (ws) |
-| Cliente | Vite + React 18 |
-| Protocolo | JSON sobre TCP |
+Servidor = Java 11+ (Sockets TCP, Threads)
+Bridge = Node.js 18+ (ws) 
+Cliente(front) = Vite + React 18 
+Protocolo JSON sobre TCP 
 
 > O frontend foi desenvolvido com auxílio de Inteligência Artificial (Claude - Anthropic).
 
@@ -16,24 +13,17 @@
 ## Como Executar 
 ## IMPORTANTE: Rode primeiro o servidor e depois o client
 
-### 1. Servidor Java
-
-```bash
+Rodar o serve(Primeiro a rodar, antes do cliente)
 cd server
 javac ChatServer.java ClientHandler.java
 java ChatServer
-```
 
-### 2. Cliente (bridge + interface)
-
-```bash
+Rodar o front(Só rodar quando o server já estiver rodando)
 cd client
 npm install
 npm run start
-```
+
 
 Acesse: **http://localhost:5173**
-
 Preencha: servidor `localhost`, porta `12345`, seu nome → **Conectar**
-
 Para múltiplos clientes: abra novas abas no mesmo endereço com nomes diferentes.

@@ -1,6 +1,9 @@
 # Java — arquivos compilados
 server/*.class
 
+# Pasta de arquivos pessoais
+Arquivos/
+
 # Node.js
 client/node_modules/
 

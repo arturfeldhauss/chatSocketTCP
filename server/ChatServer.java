@@ -11,7 +11,9 @@ public class ChatServer {
     public static final String SERVER_IP;
     static {
         String ip = "127.0.0.1";
-        try { ip = InetAddress.getLocalHost().getHostAddress(); } catch (Exception ignored) {}
+        try {
+            ip = InetAddress.getLocalHost().getHostAddress();
+        } catch (Exception ignored) {}
         SERVER_IP = ip;
     }
 
@@ -37,7 +39,6 @@ public class ChatServer {
         }
     }
 
-    // Roteia mensagem para "todos" (broadcast) ou destinatários específicos
     public static void rotearMensagem(String json, ClientHandler remetente, List<String> destinatarios) {
         if (destinatarios.contains("todos")) {
             for (ClientHandler c : clientes) {
@@ -52,7 +53,6 @@ public class ChatServer {
         }
     }
 
-    // Envia lista atualizada de conectados para todos (chamado em login/logoff)
     public static void broadcastListaConectados() {
         List<String> nomes = new ArrayList<>();
         for (ClientHandler c : clientes)
